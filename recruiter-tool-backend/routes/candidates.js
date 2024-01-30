@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const pgp = require('pg-promise')();
-const db = pgp('postgres://recruiterdb:7AcAJ8Bd3VRcespXV72XadoSyonniJtN@dpg-cmsk7m8l5elc738rjqb0-a.oregon-postgres.render.com/recruiterdb_1lp4');
+const db = pgp({
+  connectionString: 'postgres://recruiterdb:7AcAJ8Bd3VRcespXV72XadoSyonniJtN@dpg-cmsk7m8l5elc738rjqb0-a.oregon-postgres.render.com/recruiterdb_1lp4',
+  ssl: {
+    rejectUnauthorized: false, // This option is required if your PostgreSQL server is using self-signed certificates
+  },
+});
+
 
 // Function to map experience options to integer values
 const mapExperienceToInteger = (experience) => {
