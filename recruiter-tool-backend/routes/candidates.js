@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const pgp = require('pg-promise')();
-const db = pgp('postgres://postgres:aryan12@localhost:5432/recruiter_tool');
+const db = pgp('postgres://recruiterdb:7AcAJ8Bd3VRcespXV72XadoSyonniJtN@dpg-cmsk7m8l5elc738rjqb0-a.oregon-postgres.render.com/recruiterdb_1lp4');
 
 // Function to map experience options to integer values
 const mapExperienceToInteger = (experience) => {
