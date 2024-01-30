@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json()); // Parse JSON bodies
 
 // Connect to PostgreSQL database
-const db = pgp('postgres://postgres:aryan12@localhost:5432/recruiter_tool');
+const db = pgp('postgres://recruiterdb:7AcAJ8Bd3VRcespXV72XadoSyonniJtN@dpg-cmsk7m8l5elc738rjqb0-a.oregon-postgres.render.com/recruiterdb_1lp4');
 
 // Test database connection
 db.one('SELECT $1 AS value', 123)
