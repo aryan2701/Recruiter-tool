@@ -12,7 +12,13 @@ app.use(cors());
 app.use(express.json()); // Parse JSON bodies
 
 // Connect to PostgreSQL database
-const db = pgp('postgres://recruiterdb:7AcAJ8Bd3VRcespXV72XadoSyonniJtN@dpg-cmsk7m8l5elc738rjqb0-a.oregon-postgres.render.com/recruiterdb_1lp4');
+const db = pgp({
+  connectionString: 'postgres://recruiterdb:7AcAJ8Bd3VRcespXV72XadoSyonniJtN@dpg-cmsk7m8l5elc738rjqb0-a.oregon-postgres.render.com/recruiterdb_1lp4',
+  ssl: {
+    rejectUnauthorized: false, // This option is required if your PostgreSQL server is using self-signed certificates
+  },
+});
+
 
 // Test database connection
 db.one('SELECT $1 AS value', 123)
