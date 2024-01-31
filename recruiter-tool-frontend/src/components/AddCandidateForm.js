@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import api from '../services/api';
-import './AddCandidateForm.css'; // Import the CSS file
+import './AddCandidateForm.css'; 
 
 const AddCandidateForm = () => {
   const [candidateData, setCandidateData] = useState({
@@ -8,10 +8,10 @@ const AddCandidateForm = () => {
     email: '',
     phone: '',
     skills: '',
-    status: '', // Updated to store the selected status
+    status: '', 
     expected_salary: 0,
-    nodejs_experience: '', // Updated to store the selected Node.js experience
-    reactjs_experience: '', // Updated to store the selected ReactJS experience
+    nodejs_experience: '',
+    reactjs_experience: '', 
   });
 
   const handleChange = (e) => {
